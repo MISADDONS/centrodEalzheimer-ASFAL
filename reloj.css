@@ -1,0 +1,383 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #1a1a1a;
+    font-family: 'Arial', sans-serif;
+}
+
+.page-content {
+    flex-grow: 1;
+    /* Aquí irá el contenido principal de la página */
+}
+
+.app-footer {
+    padding: 20px;
+    border-top: 1px solid #00ff00;
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    justify-content: center;
+}
+
+/* Contenedor general para situar cruz a la izquierda y reloj a la derecha */
+.app-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Wrapper para la cruz y su etiqueta */
+.pharmacy-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.pharmacy-label {
+    color: #00ff00;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: 0 0 6px rgba(0, 255, 0, 0.12);
+}
+
+/* Contenedor del reloj */
+#reloj {
+    width: 250px;
+    height: 80px;
+    border: 2px solid #00ff00;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+/* Estilo para la hora */
+.tiempo {
+    font-size: 23px;
+    font-weight: bold;
+    color: #00ff00;
+    text-shadow: 0 0 0px #00ff00;
+    letter-spacing: 10px;
+    font-family: 'Courier New', monospace;
+    line-height: 1;
+}
+
+/* Estilo para la fecha */
+#fecha {
+    font-size: 15px;
+    color: #ffff00;
+    text-shadow: 0 0 15px #ffff00;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Estilos para la cruz farmacéutica */
+.pharmacy-cross {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    padding: 6px;
+    border: none;
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.pharmacy-cross svg rect {
+    fill: #00ff00;
+}
+
+@keyframes pharmacy-pulse {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0 #00ff00);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.08);
+        filter: drop-shadow(0 0 18px #00ff00);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0 #00ff00);
+        opacity: 1;
+    }
+}
+
+.pharmacy-cross.blink svg {
+    animation: pharmacy-pulse 1s ease-in-out infinite;
+}
+
+.pharmacy-cross.clicked svg {
+    animation: none;
+    filter: drop-shadow(0 0 10px #00ff00);
+}
+
+.pharmacy-cross:focus {
+    outline: 2px solid rgba(0, 255, 0, 0.25);
+    border-radius: 8px;
+}
+
+/* Estilos para el botón de revistas */
+.magazines-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.magazines-label {
+    color: #00ff00;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: 0 0 6px rgba(0, 255, 0, 0.12);
+}
+
+.magazines-btn {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    padding: 6px;
+    border: none;
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.magazines-btn svg {
+    width: 100%;
+    height: 100%;
+}
+
+.magazines-btn svg line,
+.magazines-btn svg rect {
+    stroke: #00ff00;
+}
+
+.magazines-btn:hover svg {
+    filter: drop-shadow(0 0 8px #00ff00);
+    transform: scale(1.08);
+}
+
+.magazines-btn:focus {
+    outline: 2px solid rgba(0, 255, 0, 0.25);
+    border-radius: 8px;
+}
+
+/* Responsive: en pantallas pequeñas apilar verticalmente */
+@media (max-width: 520px) {
+    .app-wrapper {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* Sección de bienvenida */
+.welcome-section {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    border-bottom: 2px solid #00ff00;
+}
+
+.welcome-section h1 {
+    font-size: 48px;
+    color: #00ff00;
+    text-shadow: 0 0 15px #00ff00;
+    margin-bottom: 10px;
+}
+
+.welcome-text {
+    font-size: 18px;
+    color: #cccccc;
+}
+
+/* Secciones generales */
+.section {
+    padding: 60px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 32px;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Grid de socios */
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.partner-card {
+    background: #2a2a2a;
+    border: 2px solid #00ff00;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.partner-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 255, 0, 0.3);
+}
+
+.partner-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid #00ff00;
+    margin-bottom: 15px;
+}
+
+.partner-card h3 {
+    font-size: 18px;
+    color: #00ff00;
+    margin-bottom: 5px;
+}
+
+.partner-card p {
+    font-size: 13px;
+    color: #999999;
+}
+
+/* Sección de fundadores */
+.memorial {
+    background: #0a0a0a;
+    border-top: 2px solid #00ff00;
+}
+
+.memorial-text {
+    text-align: center;
+    color: #cccccc;
+    font-size: 16px;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* Grid de fundadores */
+.founders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.founder-card {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    border: 2px solid #ffff00;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.founder-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(255, 255, 0, 0.2);
+    border-color: #00ff00;
+}
+
+.founder-card img {
+    width: 180px;
+    height: 180px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 3px solid #ffff00;
+    margin-bottom: 15px;
+    filter: sepia(0.2);
+}
+
+.founder-card:hover img {
+    filter: sepia(0);
+}
+
+.founder-card h3 {
+    font-size: 20px;
+    color: #ffff00;
+    text-shadow: 0 0 8px #ffff00;
+    margin-bottom: 5px;
+}
+
+.founder-card p {
+    font-size: 13px;
+    color: #cccccc;
+    margin-bottom: 10px;
+}
+
+.founder-bio {
+    font-size: 12px;
+    color: #999999;
+    font-style: italic;
+    margin-top: 10px !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .welcome-section h1 {
+        font-size: 32px;
+    }
+
+    .welcome-text {
+        font-size: 14px;
+    }
+
+    .section h2 {
+        font-size: 24px;
+    }
+
+    .section {
+        padding: 40px 15px;
+    }
+
+    .partners-grid,
+    .founders-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .partner-card img,
+    .founder-card img {
+        width: 120px;
+        height: 120px;
+    }
+}

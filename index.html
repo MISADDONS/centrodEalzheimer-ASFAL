@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj Digital</title>
+    <link rel="stylesheet" href="reloj.css">
+</head>
+
+<body>
+    <div class="page-content">
+        <!-- Sección de bienvenida y agradecimiento -->
+        <section class="welcome-section">
+            <h1>Centro de Alzheimer</h1>
+            <p class="welcome-text">Bienvenido. Un espacio dedicado al cuidado, atención y dignidad.</p>
+        </section>
+
+        <!-- Sección de socios y colaboradores -->
+        <section class="section">
+            <h2>Nuestros Socios y Colaboradores</h2>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <img src="https://via.placeholder.com/200x200?text=Socio+1" alt="Socio 1">
+                    <h3>Socio 1</h3>
+                    <p>Colaborador destacado</p>
+                </div>
+                <div class="partner-card">
+                    <img src="https://via.placeholder.com/200x200?text=Socio+2" alt="Socio 2">
+                    <h3>Socio 2</h3>
+                    <p>Apoyo continuo</p>
+                </div>
+                <div class="partner-card">
+                    <img src="https://via.placeholder.com/200x200?text=Socio+3" alt="Socio 3">
+                    <h3>Socio 3</h3>
+                    <p>Contribución valiosa</p>
+                </div>
+                <div class="partner-card">
+                    <img src="https://via.placeholder.com/200x200?text=Socio+4" alt="Socio 4">
+                    <h3>Socio 4</h3>
+                    <p>Aliado estratégico</p>
+                </div>
+                <div class="partner-card">
+                    <img src="https://via.placeholder.com/200x200?text=Socio+5" alt="Socio 5">
+                    <h3>Socio 5</h3>
+                    <p>Apoyo constante</p>
+                </div>
+                <div class="partner-card">
+                    <img src="https://via.placeholder.com/200x200?text=Socio+6" alt="Socio 6">
+                    <h3>Socio 6</h3>
+                    <p>Colaboración activa</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de fundadores en memoria -->
+        <section class="section memorial">
+            <h2>Nuestros Fundadores (En Memoria)</h2>
+            <p class="memorial-text">Honramos a quienes con dedicación y amor dieron vida a este centro.</p>
+            <div class="founders-grid">
+                <div class="founder-card">
+                    <img src="imagenes/jaime.jpg" alt="Fundador 1">
+                    <h3>Fundador 1</h3>
+                    <p>1950 - 2020</p>
+                    <p class="founder-bio">Visionario y pionero en la atención a personas con Alzheimer.</p>
+                </div>
+                <div class="founder-card">
+                    <img src="https://via.placeholder.com/200x200?text=Fundador+2" alt="Fundador 2">
+                    <h3>Fundador 2</h3>
+                    <p>1945 - 2018</p>
+                    <p class="founder-bio">Dedicado a la excelencia en el cuidado y atención.</p>
+                </div>
+                <div class="founder-card">
+                    <img src="https://via.placeholder.com/200x200?text=Fundador+3" alt="Fundador 3">
+                    <h3>Fundador 3</h3>
+                    <p>1948 - 2022</p>
+                    <p class="founder-bio">Impulsó los valores de humanidad y solidaridad.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Reloj y botones al final de la página -->
+    <footer class="app-footer">
+        <div class="app-wrapper">
+            <!-- Cruz farmacéutica: botón intermitente a la izquierda del reloj -->
+            <div class="pharmacy-wrapper">
+                <div class="pharmacy-label">FARMACIAS DE GUARDIA</div>
+                <a id="pharmacy-cross" href="farmacias.html" class="pharmacy-cross blink"
+                    title="Ver farmacias de guardia">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img"
+                        aria-label="Cruz farmacéutica">
+                        <rect x="40" y="5" width="20" height="90" rx="6" />
+                        <rect x="5" y="40" width="90" height="20" rx="6" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Reloj en el centro -->
+            <div class="clock-container">
+                <div id="reloj">
+                    <div class="tiempo">00:00:00</div>
+                    <div id="fecha">Lunes, 3 de febrero</div>
+                </div>
+            </div>
+
+            <!-- Botón de revistas a la derecha -->
+            <div class="magazines-wrapper">
+                <div class="magazines-label">REVISTAS</div>
+                <a id="magazines-btn" href="revistas.html" class="magazines-btn" title="Ver revistas del centro">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Revistas">
+                        <rect x="20" y="15" width="60" height="70" rx="3" stroke="#00ff00" stroke-width="2"
+                            fill="none" />
+                        <line x1="30" y1="25" x2="70" y2="25" stroke="#00ff00" stroke-width="2" />
+                        <line x1="30" y1="35" x2="70" y2="35" stroke="#00ff00" stroke-width="2" />
+                        <line x1="30" y1="45" x2="70" y2="45" stroke="#00ff00" stroke-width="2" />
+                        <line x1="30" y1="55" x2="70" y2="55" stroke="#00ff00" stroke-width="2" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
