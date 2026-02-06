@@ -311,6 +311,7 @@ body {
     transition: all 0.3s ease;
 }
 
+
 .founder-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(255, 255, 0, 0.2);
@@ -318,14 +319,16 @@ body {
 }
 
 .founder-card img {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     border-radius: 8px;
-    object-fit: cover;
+    /*object-fit: cover;*/
     border: 3px solid #ffff00;
     margin-bottom: 15px;
     filter: sepia(0.2);
+    */
 }
+
 
 .founder-card:hover img {
     filter: sepia(0);
@@ -344,40 +347,41 @@ body {
     margin-bottom: 10px;
 }
 
-.founder-bio {
+/*.founder-bio {
     font-size: 12px;
     color: #999999;
     font-style: italic;
     margin-top: 10px !important;
-}
+}*/
 
 /* Responsive */
 @media (max-width: 768px) {
     .welcome-section h1 {
         font-size: 32px;
     }
+}
 
-    .welcome-text {
-        font-size: 14px;
-    }
 
-    .section h2 {
-        font-size: 24px;
-    }
+.welcome-text {
+    font-size: 14px;
+}
 
-    .section {
-        padding: 40px 15px;
-    }
+.section h2 {
+    font-size: 24px;
+}
 
-    .partners-grid,
-    .founders-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 15px;
-    }
+.section {
+    padding: 40px 15px;
+}
 
-    .partner-card img,
-    .founder-card img {
-        width: 120px;
-        height: 120px;
-    }
+.partners-grid,
+.founders-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.partner-card img,
+.founder-card img {
+    width: 120px;
+    height: 120px;
 }
